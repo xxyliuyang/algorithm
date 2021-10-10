@@ -1,4 +1,4 @@
-#https://mp.weixin.qq.com/s/cnuh7kuAAwp5ySm5Lis9Ww
+# 讲解：https://mp.weixin.qq.com/s/cnuh7kuAAwp5ySm5Lis9Ww
 from typing import List
 
 class Solution:
