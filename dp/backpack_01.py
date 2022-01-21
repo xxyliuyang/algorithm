@@ -2,6 +2,7 @@
 # 解读2：https://mp.weixin.qq.com/s/B-jK6vclyrV5BCGTW1BkfA
 
 from typing import List
+from dp.util import show_dp
 
 class Solution:
     def two_wei_dp(self, bag_weight: int, weight: List[int], value: List[int]) -> int:
@@ -10,15 +11,17 @@ class Solution:
         """
         dp = [[0 for _ in range(bag_weight + 1)] for _ in range(len(weight))]
 
-        for j in range(bag_weight):
+        for j in range(bag_weight+1):
             dp[0][j] = value[0] if j >= weight[0] else 0
 
+        show_dp(dp)
         for i in range(1, len(weight)):
             for j in range(1, bag_weight+1):
                 if j < weight[i]:
                     dp[i][j] = dp[i-1][j]
                 else:
                     dp[i][j] = max(dp[i-1][j], dp[i][j-weight[i]] + value[i])
+                show_dp(dp)
 
         return dp[len(weight)-1][bag_weight]
 
@@ -28,9 +31,12 @@ class Solution:
         """
         dp = [0 for _ in range(bag_weight + 1)]
 
+        show_dp(dp)
         for i in range(len(weight)):
             for j in range(bag_weight, weight[i] - 1, -1):
                 dp[j] = max(dp[j], dp[j-weight[i]] + value[i])
+                print(i,j)
+                show_dp(dp)
 
         return dp[bag_weight]
 
@@ -42,5 +48,5 @@ if __name__ == '__main__':
     value = [15, 20, 30]
     bag_weight = 4
 
-    print(solution.two_wei_dp(bag_weight, weight, value))
+    # print(solution.two_wei_dp(bag_weight, weight, value))
     print(solution.one_wei_dp(bag_weight, weight, value))
