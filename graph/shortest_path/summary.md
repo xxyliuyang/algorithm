@@ -14,4 +14,7 @@ https://chinese.freecodecamp.org/news/dijkstras-shortest-path-algorithm-visual-i
 - 源点到其他点的距离数组
 - 未访问点的集合
 
+###### 举例
+1976、797
+
 
