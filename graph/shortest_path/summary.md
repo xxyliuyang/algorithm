@@ -15,6 +15,6 @@ https://chinese.freecodecamp.org/news/dijkstras-shortest-path-algorithm-visual-i
 - 未访问点的集合
 
 ###### 举例
-1976、797
+1976、797、743
 
 
