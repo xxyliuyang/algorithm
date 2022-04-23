@@ -4,6 +4,36 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
+class Node:
+    def __init__(self, x):
+        self.val = x
+        self.children = []
+
+
+def buld_multi_tree(nums):
+    if len(nums) == 0:
+        return None
+    root = Node(nums[0])
+    queue1 = [root]
+    queue2 = []
+    i = 2
+    while i < len(nums):
+        if len(queue1) != 0:
+            if nums[i] is not None:
+                cur = Node(nums[i])
+                queue1[0].children.append(cur)
+                queue2.append(cur)
+            else:
+                queue1 = queue1[1:]
+            i += 1
+        else:
+            queue1 = queue2
+            queue2 = []
+    return root
+
+
+
 def build_tree(nums):
     # 利用树的结构性质构建树，利用两个队列和二叉树的数组索引关系
     if len(nums) == 0:
