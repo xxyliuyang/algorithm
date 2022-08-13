@@ -37,5 +37,5 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.letterCombinations("23"))
+    print(solution.letterCombinations(""))
 
