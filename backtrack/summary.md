@@ -40,6 +40,7 @@ void backtracking(参数) {
 - 由于子集与排列问题不一样，每次递归的时候不是从0开始，所以有两中方法规避重复
   - 方法一，万能方法：使用一回溯的数组记录当前位置是否被使用过。
   - 方法二，条件判断：不是当前层的递归的开始位置，同时与上一个位置的相同（i != start and  i > 0 and nums[i] == nums[i-1]）
+https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247485435&idx=1&sn=6db97ae35adf8e983aa41102dc68dca8&scene=21#wechat_redirect
 
 #### 排列问题
 ##### 1, 什么结果是需要的
